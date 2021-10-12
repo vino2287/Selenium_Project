@@ -1,0 +1,100 @@
+package com.task.project;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Xunison {
+	public static void main(String[] args) throws Exception {
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\user pc\\eclipse-workspace\\Selenium project\\Driver\\chromedriver.exe");
+		WebDriver dr = new ChromeDriver();
+		dr.get("https://account.xunison.com/#/login?returnUrl=%2Fdashboard");
+		dr.manage().window().maximize();
+		WebElement username = dr.findElement(By.xpath("//input[@type='text']"));
+		username.sendKeys("asmitaparmar231@gmail.com");
+		WebElement password = dr.findElement(By.xpath("//input[@type='password']"));
+		password.sendKeys("asmita123");
+		WebElement submit = dr.findElement(By.xpath("//span[text()='Submit']"));
+		submit.click();
+		Thread.sleep(6000);
+		WebElement Control = dr.findElement(By.xpath("//*[text()='India B4']"));
+		Control.click();
+		Thread.sleep(3000);
+		WebElement smarthome = dr.findElement(By.xpath("//p[text()='Smart Home']"));
+		JavascriptExecutor js = (JavascriptExecutor) dr;
+		js.executeScript("arguments[0].click();", smarthome);
+		Thread.sleep(5000);
+		WebElement rooms = dr.findElement(By.xpath("//img[contains(@src,'assets/svgs/icons/rooms.svg')]"));
+		rooms.click();
+		Thread.sleep(5000);
+		WebElement Roomname = dr.findElement(By.id("title"));
+		Roomname.sendKeys("Testing");
+		Thread.sleep(3000);
+		WebElement Roomtype = dr.findElement(By.xpath("//span[text()=' Please select a room type ']"));
+		Roomtype.click();
+		Thread.sleep(3000);
+		WebElement Livingroom = dr.findElement(By.xpath("//p[text()=' Living Room ']"));
+		Livingroom.click();
+		WebElement save = dr.findElement(By.xpath("//span[text()='Save']"));
+		save.click();
+		Thread.sleep(3000);
+		WebElement confirm = dr.findElement(By.xpath("//span[text()='YES']"));
+		confirm.click();
+		Thread.sleep(3000);
+		WebElement Assign = dr.findElement(By.xpath("//*[text()='Assign device']"));
+		Assign.click();
+		Thread.sleep(3000);
+		// WebElement Switch = dr.findElement(By.xpath("//*[text()='Pan Switch 1']"));
+		// Switch.click();
+		// Thread.sleep(3000);
+		// WebElement Light = dr.findElement(By.xpath("//span[text()='Light']"));
+		// Light.click();
+		// Thread.sleep(3000);
+		// WebElement Door = dr.findElement(By.xpath("//*[text()='Door / Window 4 in
+		// 1']"));
+		// Door.click();
+		// Thread.sleep(3000);
+		// WebElement Smoke = dr.findElement(By.xpath("//*[text()='Smoke 1']"));
+		// Smoke.click();
+		// Thread.sleep(3000);
+		// WebElement Siner = dr.findElement(By.xpath("//*[text()='Siren 1']"));
+		// Siner.click();
+		// Thread.sleep(5000);
+		WebElement Sensors = dr.findElement(By.xpath("//*[text()='PIR Sensor 1']"));
+		Sensors.click();
+		Thread.sleep(3000);
+		WebElement Camera = dr.findElement(By.xpath("//*[text()='Camera']"));
+		Camera.click();
+		Thread.sleep(3000);
+		WebElement Save = dr.findElement(By.xpath("//*[text()=' Save ']"));
+		Save.click();
+		Thread.sleep(3000);
+		WebElement Confirmation = dr.findElement(By.xpath("//*[text()='YES']"));
+		Confirmation.click();
+		Thread.sleep(3000);
+		WebElement Edit = dr.findElement(By.xpath("//*[text()='Edit']"));
+		Edit.click();
+		Thread.sleep(3000);
+		WebElement Delete = dr.findElement(By.xpath("//*[text()=' Delete ']"));
+		Delete.click();
+		Thread.sleep(3000);
+		WebElement Deleteroom = dr.findElement(By.xpath("//*[text()='YES']"));
+		Deleteroom.click();
+		Thread.sleep(3000);
+		WebElement Exit = dr.findElement(By.xpath("//*[text()='Exit']"));
+		Exit.click();
+		Thread.sleep(3000);
+		WebElement Yes = dr.findElement(By.xpath("//*[text()='YES']"));
+		Yes.click();
+		Thread.sleep(3000);
+		WebElement Logout = dr.findElement(By.xpath("//*[text()='Logout']"));
+		Logout.click();
+		Thread.sleep(3000);
+		WebElement Yes1 = dr.findElement(By.xpath("//*[text()='YES']"));
+		Yes1.click();
+	}
+
+}
